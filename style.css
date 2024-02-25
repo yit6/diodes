@@ -21,7 +21,8 @@ nav p{
 	width: min(55em,100%);
 	margin:auto;
 	margin-top: 40px;
-	padding: 50px 3em 0px;
+	margin-bottom: 40px;
+	padding: 50px 3em 30px;
 	box-shadow: 0px 2px 8px 2px #ADADAD;
 }
 
