@@ -23,8 +23,9 @@ for (let i = 0; i < num; ++i) {
 }
 
 addEventListener("mousemove", (e) => {
-	mouseX = e.clientX - canvas_offset.left;
-	mouseY = e.clientY - canvas_offset.top;
+	bounds = e.target.getBoundingClientRect();
+	mouseX = e.pageX - bounds.left - window.scrollX;
+	mouseY = e.pageY - bounds.top - window.scrollY;
 });
 
 addEventListener("touchmove", (e) => {
@@ -55,11 +56,28 @@ draw = () => {
 		p.x += p.xSpd;
 		p.y += p.ySpd;
 
-		p.x = (p.x+canvas.width) % canvas.width;
-		p.y = (p.y+canvas.height) % canvas.height;
+		if (p.x < 0) {
+			p.x = 1;
+			p.xSpd *= -1;
+		}
+		if (p.x > canvas.width) {
+			p.x = canvas.width-1;
+			p.xSpd *= -1;
+		}
 
-		p.xSpd *= 0.94;
-		p.ySpd *= 0.94;
+		if (p.y < 0) {
+			p.y = 1
+			p.ySpd *= -1;
+		}
+		if (p.y > canvas.height) {
+			p.y = canvas.height-1
+			p.ySpd *= -1;
+		}
+
+		if (p.xSpd*p.xSpd + p.ySpd*p.ySpd > 10) {
+			p.xSpd *= 0.94;
+			p.ySpd *= 0.94;
+		}
 
 		if (0 <= mouseX && mouseX <= canvas.width && 0 <= mouseY && mouseY <= canvas.height) {
 			apply(p, mouseX, mouseY, forceUser);
