@@ -1,0 +1,13 @@
+body{
+	margin: 0px;
+}
+
+nav{
+	background-color: #F9F35A;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+nav a{
+	font-size: 20px;
+	font-family: Amiko, Calibri;
+}
