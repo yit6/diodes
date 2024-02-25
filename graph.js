@@ -6,7 +6,7 @@ volt_slider.value = 2.5;
 volt_slider.step = 0.001;
 
 draw = () => {
-	ctx2.clearRect(0, 0, canvas.width, canvas.height);
+	ctx2.clearRect(0, 0, graph.width, graph.height);
 	ctx2.strokeStyle="black";
 	ctx2.fillStyle="black";
 	ctx2.beginPath();
