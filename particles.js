@@ -38,7 +38,10 @@ draw = () => {
 		p.xSpd *= 0.99;
 		p.ySpd *= 0.99;
 
-		mag = 100/((p.x-mouseX)*(p.x-mouseX)+(p.y-mouseY)*(p.y-mouseY));
+		mag = 10/((p.x-mouseX)*(p.x-mouseX)+(p.y-mouseY)*(p.y-mouseY));
+
+		p.xSpd += (p.x-mouseX)*mag;
+		p.ySpd += (p.y-mouseY)*mag;
 
 		ctx.beginPath()
 		ctx.arc(p.x, p.y, 2, 0, 2*3.15);
