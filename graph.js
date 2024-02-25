@@ -3,6 +3,7 @@ const ctx2 = graph.getContext("2d");
 
 const volt_slider = document.getElementById("volt-slider");
 volt_slider.value = 5;
+volt_slider.step = 0.001;
 
 draw = () => {
 	ctx2.clearRect(0, 0, canvas.width, canvas.height);
@@ -49,4 +50,4 @@ draw = () => {
 	ctx2.stroke();
 };
 
-setInterval(draw, 100);
+setInterval(draw, 30);
