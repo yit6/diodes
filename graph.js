@@ -2,7 +2,7 @@ const graph = document.getElementById("graph");
 const ctx2 = graph.getContext("2d");
 
 const volt_slider = document.getElementById("volt-slider");
-volt_slider.value = 5;
+volt_slider.value = 2.5;
 volt_slider.step = 0.001;
 
 draw = () => {
