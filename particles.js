@@ -9,7 +9,7 @@ const canvas_offset = canvas.getBoundingClientRect();
 
 let particles = [];
 
-for (let i = 0; i < 100; ++i) {
+for (let i = 0; i < 170; ++i) {
 	particles.push({
 		x:canvas.width*Math.random(),
 		y:canvas.height*Math.random(),
@@ -38,7 +38,7 @@ draw = () => {
 		p.xSpd *= 0.99;
 		p.ySpd *= 0.99;
 
-		mag = 10/((p.x-mouseX)*(p.x-mouseX)+(p.y-mouseY)*(p.y-mouseY));
+		mag = 20/((p.x-mouseX)*(p.x-mouseX)+(p.y-mouseY)*(p.y-mouseY));
 
 		p.xSpd += (p.x-mouseX)*mag;
 		p.ySpd += (p.y-mouseY)*mag;

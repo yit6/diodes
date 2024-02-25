@@ -18,11 +18,18 @@ nav p{
 }
 
 .main{
-	width: 55em;
+	width: min(55em,100%);
 	margin:auto;
 	margin-top: 40px;
 	padding: 50px 3em 0px;
 	box-shadow: 0px 2px 8px 2px #ADADAD;
+}
+
+
+.diagram{
+	display: flex;
+	justify-content: center;
+	margin-bottom: 2em;
 }
 
 h1{
